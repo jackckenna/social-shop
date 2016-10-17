@@ -1,0 +1,127 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font: 13px Helvetica, Arial; }
+form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 50%; right: 0; }
+form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+#messages { width: 25%; list-style-type: none; margin: 0; padding: 0; position: fixed; bottom: 3.5%; right: 0; border: 2px solid #000;}
+#messages li { padding: 5px 10px;}
+#messages li p {color:red; }
+#messages li:nth-child(odd) { background: #eee; }
+
+/*----------------Navigation------------------------*/
+nav#qa-nav-main{
+	color: white;
+}
+
+ul#nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li#right-handle{
+  float: right;
+}
+
+li#right-handle a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li#right-handle a:hover{
+  background-color: #111;
+}
+
+li#nav-li {
+    float: left;
+}
+
+li#nav-li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li#nav-li a:hover {
+    background-color: #111;
+}
+
+
+/*------- Posts ------------*/
+
+#container{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.new_tweet {
+
+  margin-bottom:30px;
+
+}
+
+.new_post input[type=text] {
+
+  width:400px;
+  padding:15px;
+  border:0px;
+  border-bottom:1px solid #CA907E;
+  margin-bottom:5px;
+  font-size:20px;
+
+}
+
+input[type="button"] {
+
+    width:20%;
+    margin-left:15px;
+    padding:15px;
+    background-color: #000;
+    color:#fff;
+    border:0px;
+    border-radius:5px;
+
+}
+
+.posts {
+
+  width:100%;
+  text-align:center;
+  margin: 0 auto;
+
+}
+
+.post {
+
+  margin-bottom:10px;
+
+}
+
+.post .message {
+
+  font-size:20px;
+
+}
+
+.tweet .author {
+
+  font-size:10px;
+  color:#994636;
+
+}
