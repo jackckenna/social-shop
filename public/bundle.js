@@ -4342,11 +4342,17 @@
 	  getInitialState: function () {
 	    return {
 	      dummyPosts: [{
-	        message: "React is great!"
+	        message: "React is great!",
+	        isPublic: false,
+	        author: "uid"
 	      }, {
-	        message: "React is ok!"
+	        message: "React is ok!",
+	        isPublic: false,
+	        author: "uname"
 	      }, {
-	        message: "React is rubbish!"
+	        message: "React is rubbish!",
+	        isPublic: true,
+	        author: "uname"
 	      }]
 	    };
 	  },
@@ -4382,12 +4388,11 @@
 	  render: function () {
 	    var deleteFunction = this.props.handleDelete;
 	    var list = this.props.posts.map(function (post, i) {
-	      return React.createElement(PubPost, { key: i, message: post.message, id: i });
+	      return React.createElement(PubPost, { key: i, message: post.message, isPublic: post.isPublic, id: i });
 	    });
 	    return React.createElement(
 	      "div",
 	      { className: "posts" },
-	      React.createElement("input", { type: "button", value: "Delete all tweets", onClick: this.props.deleteAll }),
 	      list
 	    );
 	  }
@@ -4412,15 +4417,19 @@
 	    this.props.handleDelete(this.props.id);
 	  },
 	  render: function () {
+	
+	    if (this.props.isPublic) {
+	      var message = this.props.message;
+	    }
+	
 	    return React.createElement(
 	      "div",
 	      { className: "post" },
 	      React.createElement(
 	        "div",
 	        { className: "message" },
-	        this.props.message
-	      ),
-	      React.createElement("input", { type: "button", value: "Delete Tweet", onClick: this.deletedTweet })
+	        message
+	      )
 	    );
 	  }
 	});

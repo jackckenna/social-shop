@@ -6,12 +6,16 @@ var pPost = React.createClass({
     this.props.handleDelete(this.props.id);
   },
   render: function() {
+
+    if(this.props.isPublic){
+      var message = this.props.message
+    }
+
     return (
       <div className="post">
         <div className="message">
-          {this.props.message}
+          {message}
         </div>
-        <input type="button" value="Delete Tweet" onClick={this.deletedTweet}/>
       </div>
     )
   }

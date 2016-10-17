@@ -5,12 +5,11 @@ var publicPosts = React.createClass({
     var deleteFunction = this.props.handleDelete
     var list = this.props.posts.map( function(post, i) {
       return (
-          <PubPost key={i} message={post.message} id={i} />
+          <PubPost key={i} message={post.message} isPublic={post.isPublic} id={i} />
       )
     });
     return (
       <div className="posts">
-        <input type="button" value="Delete all tweets" onClick={this.props.deleteAll} />
         {list}
       </div>
     )

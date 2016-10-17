@@ -6,11 +6,17 @@ var welcomeHome = React.createClass({
     return {
       dummyPosts: [
         {
-          message: "React is great!"
+          message: "React is great!",
+          isPublic: false,
+          author: "uid"
         }, {
-          message: "React is ok!"
+          message: "React is ok!",
+          isPublic: false,
+          author: "uname"
         }, {
-          message: "React is rubbish!"
+          message: "React is rubbish!",
+          isPublic: true,
+          author: "uname"
         }
       ]
     };
