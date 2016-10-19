@@ -1,34 +1,33 @@
-var PublicPosts = require('./publicPosts.jsx')
+var PublicPosts = require('./publicPosts.jsx');
+var PostStore = require('../stores/postStore.js');
+var GroupChat = require('./chat/groupChat.jsx');
+var Login = require('./users/login.jsx');
+var NavigationStore = require('../stores/navStore.js');
 
 
 var welcomeHome = React.createClass({
   getInitialState: function() {
     return {
-      dummyPosts: [
-        {
-          message: "React is great!",
-          isPublic: false,
-          author: "uid"
-        }, {
-          message: "React is ok!",
-          isPublic: false,
-          author: "uname"
-        }, {
-          message: "React is rubbish!",
-          isPublic: true,
-          author: "uname"
-        }
-      ]
-    };
+      publicPosts: [],
+    }
+  },
+  componentDidMount: function() {
+    var data;
+    axios.get('/posts')
+        .then(function(response) {
+          data = response.data.publicPosts;
+          console.log(data);
+          this.setState({ publicPosts: data });
+        }.bind(this));
+    console.log(this.state.publicPosts);
   },
   render: function() {
     return (
       <div className="welcome">
-        <h1>Welcome to your public home feed</h1>
-        <PublicPosts posts={this.state.dummyPosts}  />
+        <PublicPosts posts={this.state.publicPosts}  />
+        <GroupChat />
       </div>
     )
-
   }
 
 });

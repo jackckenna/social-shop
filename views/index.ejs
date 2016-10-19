@@ -3,17 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title><%= title %></title>
-    <script type="text/javascript" src="bower_components/axios/dist/axios.min.js"></script>
-    <script src="bower_components/react/react.js"></script>
-    <script src="bower_components/react/react-dom.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <% include partials/nav %>
+    <div id="navigation">
+
+    </div>
     <div id="container">
 
     </div>
+    <script type="text/javascript" src="bower_components/axios/dist/axios.min.js"></script>
+    <script src="bower_components/react/react.js"></script>
+    <script src="bower_components/react/react-dom.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="../bundle.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+      var socket = io();
+
+      $('form').submit(function(){
+      var time = new Date();
+      socket.emit('chat message', time + "  " + $('#m').val());
+      $('#m').val('');
+      return false;
+      });
+
+
+      socket.on('chat message', function(msg){
+      $('#messages').append($('<li>').text(msg));
+      });
+
+    </script>
   </body>
 </html>

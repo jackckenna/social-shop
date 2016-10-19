@@ -1,6 +1,6 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #cecece;
 }
 
 a {
@@ -8,7 +8,6 @@ a {
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font: 13px Helvetica, Arial; }
 form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 50%; right: 0; }
 form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
 form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
@@ -30,11 +29,11 @@ ul#nav-ul {
     background-color: #333;
 }
 
-li#right-handle{
+li.right-handle{
   float: right;
 }
 
-li#right-handle a{
+li.right-handle a{
   display: block;
   color: white;
   text-align: center;
@@ -42,7 +41,7 @@ li#right-handle a{
   text-decoration: none;
 }
 
-li#right-handle a:hover{
+li.right-handle a:hover{
   background-color: #111;
 }
 
@@ -70,7 +69,7 @@ li#nav-li a:hover {
   margin: 0 auto;
 }
 
-.new_tweet {
+.new_post {
 
   margin-bottom:30px;
 
@@ -87,30 +86,29 @@ li#nav-li a:hover {
 
 }
 
-input[type="button"] {
-
-    width:20%;
-    margin-left:15px;
-    padding:15px;
-    background-color: #000;
-    color:#fff;
-    border:0px;
-    border-radius:5px;
-
-}
-
-.posts {
-
-  width:100%;
+div.posts {
+  margin: 25px;
+  width:40%;
   text-align:center;
   margin: 0 auto;
 
 }
 
-.post {
-
+div.post {
+  background: #e8fbfa;
+  padding: 5px;
+  border-radius: 25px;
+  padding: 20px;
   margin-bottom:10px;
 
+}
+
+div.welcome{
+  margin-top: 5%;
+}
+
+div.post h1 {
+  text-align: left;
 }
 
 .post .message {
@@ -124,4 +122,111 @@ input[type="button"] {
   font-size:10px;
   color:#994636;
 
+}
+
+
+/*<----------Forms*/
+
+.login-register{
+    max-width: 500px;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.login-register fieldset{
+    border: none;
+}
+.login-register legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.login-register label {
+    display: block;
+    margin-bottom: 8px;
+}
+.login-register input[type="text"],
+.login-register input[type="date"],
+.login-register input[type="datetime"],
+.login-register input[type="email"],
+.login-register input[type="number"],
+.login-register input[type="search"],
+.login-register input[type="time"],
+.login-register input[type="url"],
+.login-register input[type="password"],
+.login-register textarea,
+.login-register select {
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+
+}
+.login-register input[type="text"]:focus,
+.login-register input[type="date"]:focus,
+.login-register input[type="datetime"]:focus,
+.login-register input[type="email"]:focus,
+.login-register input[type="number"]:focus,
+.login-register input[type="search"]:focus,
+.login-register input[type="time"]:focus,
+.login-register input[type="url"]:focus,
+.login-register input[type="password"]:focus,
+.login-register textarea:focus,
+.login-register select:focus{
+    background: #d2d9dd;
+}
+.login-register select{
+    -webkit-appearance: menulist-button;
+    height:35px;
+}
+.login-register .number {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.login-register input[type="submit"],
+.login-register input[type="button"]
+{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #1abc9c;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+.login-register input[type="submit"]:hover,
+.login-register input[type="button"]:hover
+{
+    background: #109177;
 }
